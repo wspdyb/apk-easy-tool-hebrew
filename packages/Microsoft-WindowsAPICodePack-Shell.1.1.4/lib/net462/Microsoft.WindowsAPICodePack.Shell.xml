@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <doc>
     <assembly>
         <name>Microsoft.WindowsAPICodePack.Shell</name>
@@ -17472,7 +17472,7 @@
             <summary>The Control Panel in classic view. This is a virtual folder.</summary>
         </member>
         <member name="F:Microsoft.WindowsAPICodePack.Shell.FolderTypes.Documents">
-            <summary>The folder contains document files. These can be of mixed format.doc, .txt, and others.</summary>
+            <summary>The folder contains document files. These can be of mixed formatֲ—.doc, .txt, and others.</summary>
         </member>
         <member name="F:Microsoft.WindowsAPICodePack.Shell.FolderTypes.Games">
             <summary>The folder is the Games folder found in the Start menu.</summary>
@@ -17541,7 +17541,7 @@
             <summary>Windows 7 and later. The view shown when the user clicks the Windows Explorer button on the taskbar.</summary>
         </member>
         <member name="F:Microsoft.WindowsAPICodePack.Shell.FolderTypes.Videos">
-            <summary>Windows 7 and later. The folder contains video files. These can be of mixed format.wmv, .mov, and others.</summary>
+            <summary>Windows 7 and later. The folder contains video files. These can be of mixed formatֲ—.wmv, .mov, and others.</summary>
         </member>
         <member name="T:Microsoft.WindowsAPICodePack.Shell.IKnownFolder">
             <summary>Represents a registered or known folder in the system.</summary>
@@ -21283,7 +21283,7 @@
             Gets the recommended number of items to add to the jump list.  
             </summary>
             <remarks>
-            This number doesn’t 
+            This number doesnג€™t 
             imply or suggest how many items will appear on the jump list.  
             This number should only be used for reference purposes since
             the actual number of slots in the jump list can change after the last
@@ -22600,3 +22600,4 @@
         </member>
     </members>
 </doc>
+

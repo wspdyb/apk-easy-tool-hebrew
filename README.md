@@ -21,7 +21,7 @@ The goal of this version is to fix critical bugs related to **Hebrew/RTL paths**
 ##  créditos (Credits)
 
 * Original Author: **evildog1**
-* Hebrew Fixes & Maintenance: **[Your Name/Community]**
+* Hebrew Fixes & Maintenance: **[wspdyb - זונדל גרנד מתמחים טופ]**
 
 ## 📜 License
 
