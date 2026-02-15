@@ -43,3 +43,15 @@ This software is provided **"as is"** and **"with all faults"**. The maintainer 
 ### 📦 Third-Party Tools
 * **7-Zip:** Developed by Igor Pavlov.
 * **Android SDK Tools (aapt, adb, zipalign):** Owned by Google LLC.
+
+## 🎖️ Credits & Acknowledgments
+* **Original Author:** evildog1
+* **Source Base:** [metzger100/APKEasyTool](https://github.com/metzger100/APKEasyTool)
+* **Hebrew Localization & Smart Build:** wspdyb (Zundel Grand)
+
+### 🛠️ Built with:
+* **Apktool:** [iBotPeaches](https://github.com/iBotPeaches/Apktool) (Apache 2.0)
+* **7-Zip:** Igor Pavlov
+* **Smali/Baksmali:** JesusFreke
+* **SharpShell:** dwmkerr
+* **Android SDK Tools:** Google LLC
