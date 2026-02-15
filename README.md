@@ -15,6 +15,10 @@ The original tool became unusable due to:
 * **📜 UTF-8 Logs:** Fixed encoding issues in the console window.
 * **🤖 Updated Core:** Includes **Apktool 2.10.0** for modern Android support.
 
+
+## 📋 Prerequisites
+To run this tool and use the compilation features, you must have **Java 17 or newer** (64-bit) installed.
+* **Recommended:** [Eclipse Temurin (Adoptium)](https://adoptium.net/temurin/releases/?version=17)
 ## 📦 Download
 Go to the [Releases Page](../../releases) to download the EXE.
 
@@ -55,3 +59,5 @@ This software is provided **"as is"** and **"with all faults"**. The maintainer 
 * **Smali/Baksmali:** JesusFreke
 * **SharpShell:** dwmkerr
 * **Android SDK Tools:** Google LLC
+* **Java Runtime (Temurin):** Provided by [Adoptium](https://adoptium.net/).
+
