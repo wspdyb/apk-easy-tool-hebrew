@@ -1,3 +1,11 @@
+﻿v2.0 (Hebrew Edition) (2026-02-15)
+- NEW: Full Hebrew User Interface (Translation + RTL Layout).
+- CRITICAL FIX: Smart Build System for Hebrew/Non-English paths.
+- Updated: Core engine to Apktool 2.10.0 (Android 14/15 support).
+- Fixed: Log encoding (UTF-8).
+
+-------------------------------------------------
+
 v1.60 (Final) (2022-06-23)
 - Added Force manifest for decompiling
 - Removed unused checkbox "v4 no merkle tree" because it wasn't available for apksigner.jar
@@ -439,7 +447,7 @@ v1.41 (2017-12-01)
 - Removed exe downloader.
 - Removed Kill adb button. It is not necessary.
 - Removed setup directories for me button. The program automatically create directories if they are not set.
-- German (üöä), danish (æøå) and some other foreign characters are supported. Chinese, japanese, etc are ONLY supported IF system locale is correctly set. See more: https://www.top-password.com/blog/tag/change-system-locale-windows-command-line/
+- German (ֳ¼ֳ¶ֳ₪), danish (ֳ¦ֳ¸ֳ¥) and some other foreign characters are supported. Chinese, japanese, etc are ONLY supported IF system locale is correctly set. See more: https://www.top-password.com/blog/tag/change-system-locale-windows-command-line/
 - Uncheck "Sign APK after compile" no longer uncheck and grey out "Install APK after compile". Now you can install unsigned APK for rooted devices only.
 - Check "Keep original signature" no longer uncheck "Install APK after compile" and disable "Zipalign"
 - Fixed tab orders

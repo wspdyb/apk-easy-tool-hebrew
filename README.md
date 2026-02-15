@@ -1,53 +1,26 @@
-﻿
-# APK Easy Tool - Hebrew & Modern Fix Edition 🇮🇱
+﻿# APK Easy Tool - Hebrew & Modern Fix Edition 🇮🇱
 
+This is a **maintained and fixed fork** of the original [APK Easy Tool](https://github.com/evildog1/APK-Easy-Tool).
 
+## 🛑 The Problem
+The original tool became unusable due to:
+1.  **Crashes:** Failed when working with Hebrew paths (e.g., C:\הורדות).
+2.  **Gibberish Logs:** Console showed ???? instead of text.
+3.  **Outdated UI:** No native RTL support for Hebrew speakers.
+4.  **Old Engine:** No support for Android 14/15.
 
-This is a **maintained and fixed fork** of the original [APK Easy Tool](https://github.com/evildog1/APK-Easy-Tool) (last updated in 2022).
-
-
-
-## 🛑 The Problem (Why this fork exists?)
-
-The original tool had critical bugs that made it unusable in 2026:
-
-1.  **Hebrew/Non-English Path Crash:** Using Apktool on folders with Hebrew characters (e.g., C:\הורדות\app.apk) caused rut.androlib.exceptions.AndrolibException and failed builds.
-
-2.  **Gibberish Logs:** Console output displayed question marks (????) instead of readable text due to encoding mismatch.
-
-3.  **Outdated Engine:** The internal pktool.jar (v2.6.1) could not handle modern apps (Android 14/15).
-
-
-
-## ✅ The Solution (What we changed)
-
-This version introduces a **"Smart Build System"**:
-
-* **Auto-Path Fix:** The tool detects Hebrew/Special characters and automatically creates a temporary, safe English working directory for pktool operations, then restores the original names upon completion.
-
-* **UTF-8 Enforcement:** Forced chcp 65001 and UTF-8 encoding across all CMD processes to fix log readability.
-
-* **Upgraded Core:** Included Apktool 2.10.0 to support the latest Android APKs.
-
-* **Cleaned UI:** Updated version numbers and changelogs to reflect the new maintenance.
-
-
+## ✅ The Solution (v2.0 Features)
+* **🎨 Full Hebrew UI (RTL):** The entire interface has been translated and aligned Right-to-Left for a native Hebrew experience.
+* **🛠️ Smart Build System:** Automatically handles Hebrew paths in the background to prevent crashes.
+* **📜 UTF-8 Logs:** Fixed encoding issues in the console window.
+* **🤖 Updated Core:** Includes **Apktool 2.10.0** for modern Android support.
 
 ## 📦 Download
-
-Go to the [Releases Page](../../releases) to download the ready-to-use EXE.
-
-
+Go to the [Releases Page](../../releases) to download the EXE.
 
 ## 📜 Credits
-
 * Original Creator: **evildog1**
-
-* Hebrew Fixes & Maintenance: **[wspdyb - זונדל גרנד מתמחים טופ]**
-
-
+* Hebrew Localization & Fixes: **[wspdyb - זונדל גרנד מתמחים טופ]**
 
 ## 📜 License
-
 Project follows the original open-source license.
-
