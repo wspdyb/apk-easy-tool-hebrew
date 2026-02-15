@@ -24,3 +24,22 @@ Go to the [Releases Page](../../releases) to download the EXE.
 
 ## 📜 License
 Project follows the original open-source license.
+
+
+## ⚖️ Legal Disclaimer & Credits
+
+### 📚 Source & Attribution
+This project is a modified fork. The source code and project structure were retrieved from [metzger100/APKEasyTool](https://github.com/metzger100/APKEasyTool), which is based on the original APK Easy Tool by **evildog1**. 
+
+### 🛠 Core Engine
+The decompilation and compilation functionality is powered by **Apktool**, developed by [iBotPeaches](https://github.com/iBotPeaches/Apktool). This component is licensed under the Apache License 2.0.
+
+### ⚠️ Disclaimer of Warranty
+This software is provided **"as is"** and **"with all faults"**. The maintainer (wspdyb) and all previous contributors make no representations or warranties of any kind concerning the safety, suitability, or inaccuracies of this software. 
+
+### 🚫 Limitation of Liability
+**Use this tool at your own risk.** In no event shall the authors or maintainers be liable for any direct, indirect, special, incidental, or consequential damages (including, but not limited to, "bricked" devices, loss of data, or legal issues) arising out of the use of or inability to use this software. 
+
+### 📦 Third-Party Tools
+* **7-Zip:** Developed by Igor Pavlov.
+* **Android SDK Tools (aapt, adb, zipalign):** Owned by Google LLC.
