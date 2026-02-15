@@ -18,11 +18,13 @@ namespace APKEasyTool
         public ApkInfoForm(MainForm Main)
         {
             main = Main;
+            Lang.ApplyRTL(this);
         }
 
         public ApkInfoForm()
         {
             InitializeComponent();
+            Lang.ApplyRTL(this);
             Text = Lang.Localize("apk_info_title", Text);
             saveAsBtn.Text = Lang.Localize("save_as_btn", saveAsBtn.Text);
 
@@ -32,7 +34,7 @@ namespace APKEasyTool
 
             ContextMenu contextMenu = new ContextMenu();
             MenuItem menuItem = new MenuItem();
-            menuItem = new MenuItem("Copy");
+            menuItem = new MenuItem(Lang.Localize("copy_lbl", "Copy"));
             menuItem.Click += new EventHandler(CopyAction);
             contextMenu.MenuItems.Add(menuItem);
             apkInfoRichTextBox.ContextMenu = contextMenu;

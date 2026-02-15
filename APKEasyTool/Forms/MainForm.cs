@@ -57,7 +57,7 @@ namespace APKEasyTool
 
             //----- Main -----//
             selectApk.Click += new EventHandler((sender, e) => tabMainInstance.selectApk_Click(sender, e));
-            logoPanel.Click += new EventHandler((sender, e) => { UpdateForm form = new UpdateForm(); form.Show(); });
+            // logoPanel.Click += new EventHandler((sender, e) => { UpdateForm form = new UpdateForm(); form.Show(); });
 
             tabMain.DragLeave += new EventHandler((sender, e) => tabMain.BackColor = Color.White);
             tabMain.DragEnter += new DragEventHandler((sender, e) => {
@@ -142,6 +142,9 @@ namespace APKEasyTool
             launchLbl.Click += new EventHandler((sender, e) => { tabMainInstance.launchLbl_Click(sender, e); });
             selectDecDir.Click += new EventHandler((sender, e) => { tabMainInstance.selectDecDir_Click(sender, e); });
             fullApkInfoBtn.Click += new EventHandler((sender, e) => { ApkInfoForm form = new ApkInfoForm(); form.Show(); });
+            
+            comCcheckBox.CheckedChanged += (s, ev) => { if (comCcheckBoxMain.Checked != comCcheckBox.Checked) comCcheckBoxMain.Checked = comCcheckBox.Checked; };
+            comCcheckBoxMain.CheckedChanged += (s, ev) => { if (comCcheckBox.Checked != comCcheckBoxMain.Checked) comCcheckBox.Checked = comCcheckBoxMain.Checked; };
 
             psPicBox.Click += new EventHandler((sender, e) => { if (pakLbl.Text != "---") Process.Start("https://play.google.com/store/apps/details?id=" + pakLbl.Text); });
             acPicBox.Click += new EventHandler((sender, e) => { if (pakLbl.Text != "---") Process.Start("https://apkcombo.com/a/" + pakLbl.Text); });
@@ -485,6 +488,9 @@ namespace APKEasyTool
         {
             Invoke(new Action(delegate ()
             {
+                string timestamp = DateTime.Now.ToString("[HH:mm:ss] ");
+                richTextBoxLogs.SelectionColor = Color.Gray;
+                richTextBoxLogs.AppendText(timestamp);
                 richTextBoxLogs.SelectionColor = color ?? Color.White;
                 richTextBoxLogs.AppendText(text + Environment.NewLine);
                 // richTextBoxLogs.SelectionStart = richTextBoxLogs.Text.Length;

@@ -1,0 +1,403 @@
+<!-- Hebrew translation for APKEasyTool -->
+<Language name="APK Easy Tool" rtl="true">
+	<!-- Credit your name here if you want. It will be shown in About page -->
+	<Localized name="translated_by_lbl" value="תורגם ונערך על ידי:"/>
+	<!-- Bold text -->
+	<Localized name="translation_credit_lbl" value="w.i.g"/>
+	<!-- Normal text will be shown below the bold text -->
+	<!-- ================== -->
+	<!-- Global - These strings are used anywhere -->
+	<!-- ================== -->
+	<Localized name="decompile" value="פירוק (Decompile)"/>
+	<Localized name="compile" value="בנייה (Compile)"/>
+	<Localized name="sign" value="חתימה (Sign)"/>
+	<Localized name="framework" value="Framework"/>
+	<Localized name="change_btn" value="שינוי..."/>
+	<Localized name="select_btn" value="עיון..."/>
+	<Localized name="cancel_esc" value="(לחץ על ESC לביטול)"/>
+	<Localized name="ok_btn" value="אישור"/>
+	<Localized name="general" value="כללי"/>
+	<Localized name="dec_force_del_dir_chk" value="מחיקת תיקיית היעד באופן מאולץ"/>
+	<Localized name="dec_force_del_dir_tip" value="מחיקת תיקיית היעד באופן מאולץ. השתמש במקרה של פירוק לתיקייה קיימת."/>
+	<Localized name="com_keep_orig_sig_chk" value="שמירה על החתימה המקורית"/>
+	<Localized name="com_keep_orig_sig_tip" value="מעתיק את AndroidManifest.xml ו-META-INF המקוריים.[(new-line)]פרטים נוספים בכתובת https://ibotpeaches.github.io/Apktool/"/>
+	<!-- URL is hardcoded -->
+	<Localized name="com_skip_changes_chk" value="דילוג על זיהוי שינויים"/>
+	<Localized name="com_skip_changes_tip" value="דילוג על זיהוי שינויים ובנייה מחדש של כל הקבצים."/>
+	<Localized name="com_use_appt2_tip" value="משדרג את apktool לשימוש בבינארי aapt2 (ניסיוני)."/>
+	<Localized name="resource_missing_notice" value="הקובץ Apktool או תיקיית ה-Resources חסרים. ודא שהם נמצאים לצד apkeasytool.exe"/>
+	<Localized name="instance_title" value="מופע (Instance)"/>
+	<Localized name="java_not_installed_notice" value="Java לא מותקנת. אנא התקן את Java SE או בחר נתיב ל-Java בהגדרות."/>
+	<Localized name="apktool_not_sel_mbox" value="גרסת ה-Apktool.jar לא נבחרה. אנא בחר אותה בהגדרות."/>
+
+	<!-- ================== -->
+	<!-- Status -->
+	<!-- ================== -->
+	<Localized name="read_apk" value="קורא APK..."/>
+	<Localized name="done" value="בוצע"/>
+	<Localized name="error_read_apk" value="אירעה שגיאה בקריאת קובץ ה-APK"/>
+	<Localized name="apk_not_sel_mbox" value="לא נבחר קובץ APK. אנא בחר קובץ."/>
+	<Localized name="chk_for_update" value="בודק עדכונים..."/>
+	<Localized name="no_update" value="אין עדכונים זמינים"/>
+
+	<!-- ================== -->
+	<!-- Main Tab -->
+	<!-- ================== -->
+	<Localized name="tab_name_main" value="ראשי"/>
+	<Localized name="sel_dec_folder" value="בחר תיקיית APK מפורקת..."/>
+	<Localized name="sel_dec_folder_tip" value="בחר את התיקייה שבה נמצא ה-APK המפורק"/>
+	<Localized name="file_folder_lbl" value="קובץ / תיקייה:"/>
+	<Localized name="decompile_name_lbl" value="שם לאחר פירוק:"/>
+	<Localized name="compile_name_lbl" value="שם לאחר בנייה:"/>
+	<Localized name="tip_drop_apk_lbl" value="טיפ: גרור קובץ APK/JAR או תיקייה מפורקת לכאן"/>
+	<Localized name="decode_api_lvl_lbl" value="רמת API לפירוק:"/>
+	<Localized name="rebuild_api_lvl_lbl" value="רמת API לבנייה:"/>
+	<Localized name="api_tip" value="רמת ה-API הנומרית של הקובץ שייוצר, לדוגמה: 14 עבור ICS."/>
+
+	<!-- Buttons -->
+	<Localized name="sign_apk_btn" value="חתימה על APK"/>
+	<Localized name="zipalign__btn" value="יישור ZipAlign"/>
+	<Localized name="extract_apk_btn" value="חילוץ קובץ APK"/>
+	<Localized name="zip_apk_btn" value="דחיסת APK (Zip):"/>
+	<Localized name="install_apk_btn" value="התקנת APK"/>
+	<Localized name="check_align_btn" value="בדיקת יישור"/>
+	<Localized name="dec_apk_dir_btn" value="תיקיית APK מפורק"/>
+	<Localized name="com_apk_dir_btn" value="תיקיית APK בנוי"/>
+	<Localized name="ext_apk_dir_btn" value="תיקיית APK מחולץ"/>
+	<Localized name="zip_apk_dir_btn" value="תיקיית APK דחוס"/>
+
+	<!-- Quick Options -->
+	<Localized name="fw_use_tag_lbl" value="תגית Framework:"/>
+	<Localized name="fw_use_tag_tip" value="תיוג קבצי Framework"/>
+
+	<!-- Info -->
+	<Localized name="package_name_lbl" value="שם חבילה:"/>
+	<Localized name="launch_activity_lbl" value="פעילות הרצה (Activity):"/>
+	<Localized name="min_sdk_ver_lbl" value="גרסת SDK מינימלית:"/>
+	<Localized name="target_sdk_ver_lbl" value="גרסת SDK מיועדת:"/>
+	<Localized name="version_name_lbl" value="שם גרסה:"/>
+	<Localized name="version_code_lbl" value="קוד גרסה:"/>
+	<Localized name="signature_scheme_lbl" value="שיטת חתימה:"/>
+	<Localized name="ps_link" value="צפה בחנות Google Play"/>
+	<Localized name="apkcombo_link" value="צפה ב-Apkcombo"/>
+	<Localized name="apkpure_link" value="צפה ב-Apkpure"/>
+	<Localized name="full_apk_info_btn" value="מידע מלא על ה-APK"/>
+
+	<!-- In code -->
+	<Localized name="not_a_dec_notice" value="זוהי לא תיקיית APK מפורקת"/>
+	<Localized name="sel_files_diag" value="בחר קובץ APK או JAR"/>
+	<Localized name="invalid_notice" value="הקובץ או התיקייה אינם קיימים"/>
+	<Localized name="pak_id_copy_notice" value="שם החבילה הועתק ללוח."/>
+	<Localized name="activity_not_found" value="לא נמצאה פעילות (Activity) ראשית"/>
+	<Localized name="sel_dec_diag" value="בחר את פרויקט התיקייה המפורקת לעבודה"/>
+	<Localized name="not_a_dec_2_notice" value="התיקייה שבחרת אינה תיקייה מפורקת של APK"/>
+	<Localized name="dir_dec_not_set_notice" value="תיקיית הפירוק אינה מוגדרת."/>
+	<Localized name="plz_name_dec_mbox" value="אנא הזן שם קובץ לפירוק."/>
+	<Localized name="dec_again_mbox" value="האם אתה בטוח שברצונך לבצע פירוק מחדש?"/>
+	<Localized name="apk_dec_not_set_mbox" value="תיקיית הפירוק אינה מוגדרת"/>
+	<Localized name="apk_dex_not_sel_mbox" value="לא נבחר קובץ APK או תיקייה מפורקת."/>
+	<Localized name="enter_name_com_mbox" value="אנא הזן שם קובץ לבנייה"/>
+	<Localized name="dec_apk_first_mbox" value="בצע פירוק (Decompile) לקובץ ה-APK תחילה"/>
+	<Localized name="com_apk_first_mbox" value="בצע בנייה (Compile) לקובץ ה-APK תחילה."/>
+	<Localized name="adb_busy_mbox" value="ADB עסוק. האם ברצונך לאתחל את ADB?"/>
+	<Localized name="zipalign_first_mbox" value="בצע יישור (Zipalign) לקובץ ה-APK תחילה"/>
+	<Localized name="ext_apk_first_mbox" value="בצע חילוץ לקובץ APK תחילה."/>
+	<Localized name="cancel_mbox" value="ביטול יפסיק את פעולת התוכנה. האם אתה בטוח?"/>
+	<!-- ================== -->
+	<!-- Smali/baksmali tab -->
+	<!-- ================== -->
+	<Localized name="smali_bak_tab" value="Smali/baksmali"/>
+	<Localized name="baksmali_lbl" value="Baksmali"/>
+	<Localized name="dex_files_lbl" value="קובץ Dex/odex/oat:"/>
+	<Localized name="bak_out_dir_lbl" value="תיקיית יעד ל-Baksmali:"/>
+	<Localized name="name_dec_smali_lbl" value="שם ה-Smali המפורק:"/>
+	<Localized name="deodex_lbl" value="Deodex (ביטול אופטימיזציה)"/>
+	<Localized name="smali_lbl" value="Smali"/>
+	<Localized name="dis_dir_lbl" value="תיקיית Smali מפורקת:"/>
+	<Localized name="smali_out_dir_lbl" value="תיקיית יעד ל-Smali:"/>
+	<Localized name="name_of_com_smali_lbl" value="שם ה-Smali המורכב:"/>
+	<Localized name="dec_smali_btn" value="פירוק Smali"/>
+	<Localized name="com_smali_btn" value="הרכבת Smali"/>
+
+	<!-- In code -->
+	<Localized name="sel_dex_odex_diag" value="בחר קובץ dex או odex"/>
+	<Localized name="sel_dis_dir_diag" value="בחר תיקייה לשמירת קבצי ה-Smali המפורקים"/>
+	<Localized name="dex_not_sel_mbox" value="לא נבחר קובץ Dex/odex."/>
+	<Localized name="dir_not_set_mbox" value="התיקייה אינה מוגדרת."/>
+	<Localized name="plz_enter_dis_name_mbox" value="אנא הזן שם ל-Smali המפורק"/>
+	<Localized name="sel_dis_folder_diag" value="בחר את תיקיית ה-Smali המפורקת"/>
+	<Localized name="sel_sma_dir_diag" value="בחר תיקייה לשמירת ה-Smali המורכב"/>
+	<Localized name="plz_enter_sma_name_mbox" value="אנא הזן שם ל-Smali המורכב"/>
+
+	<!-- ================== -->
+	<!-- Log output tab -->
+	<!-- ================== -->
+	<Localized name="log_output_tab" value="פלט יומן..."/>
+	<Localized name="enable_log_out_check" value="אפשר פלט יומן"/>
+	<Localized name="open_log_btn" value="פתח תיקיית יומן"/>
+	<Localized name="clr_this_log_btn" value="נקה יומן"/>
+	<Localized name="save_log_btn" value="שמור יומן"/>
+
+	<!-- In code -->
+	<Localized name="please_read_faq" value="לחץ כאן למידע נוסף על בעיות ב-Apktool"/>
+	<Localized name="log_dir_mbox_err" value="תיקיית היומן לא נמצאה"/>
+
+	<!-- ================== -->
+	<!-- Framework tab -->
+	<!-- ================== -->
+	<Localized name="framework_file_lbl" value="קובץ Framework:"/>
+	<Localized name="install_dir_lbl" value="תיקיית התקנה:"/>
+	<Localized name="tag_fw_lbl" value="תיוג (Tag):"/>
+	<Localized name="fw_dir_lbl" value="תיקיית Framework:"/>
+	<Localized name="fw_dir_note_lbl" value="שימוש בקבצי Framework מתיקייה לצורך פירוק ובנייה. אם התיקייה ריקה,[(new-line)]ייעשה שימוש ב-APK הנמצא ב-%appdata%/local/apktool/framework או ב-temp 3"/>
+	<Localized name="fw_dir_note2_lbl" value="לרוב, כל APK ב-/system/framework במכשיר יהיה קובץ Framework.[(new-line)]במכשירים מסוימים הם עשויים להיות ב-/data/system-framework ואף ב-/system/app או /system/priv-app.[(new-line)]בדרך כלל הם נקראים 'resources', 'res' או 'framework'."/>
+	<Localized name="fw_dir_note3_lbl" value="הערה: ל-Apktool אין שליטה על קבצי ה-Framework לאחר התקנתם, אך אתה רשאי לנהל אותם ידנית."/>
+	<Localized name="sel_fw_btn" value="בחר Framework"/>
+	<Localized name="install_fw_btn" value="התקן Framework (APK)"/>
+	<Localized name="open_fw_dir_btn" value="פתח תיקיית Framework"/>
+	<Localized name="clr_fw_btn" value="נקה מטמון Framework"/>
+
+	<!-- In code -->
+	<Localized name="and_fw_pack_lbl" value="חבילת Framework של אנדרואיד"/>
+	<Localized name="sel_fw_diag" value="בחר קובץ APK של Framework"/>
+	<Localized name="fw_not_sel_mbox" value="ה-Framework לא נבחר. אנא בחר קובץ."/>
+	<Localized name="sel_fw_folder_diag" value="בחר תיקייה לשמירת ה-APK של ה-Framework"/>
+	<Localized name="sel_fw_stored_diag" value="בחר את התיקייה שבה שמרת את קבצי ה-Framework (APK)"/>
+
+	<!-- ================== -->
+	<!-- Options tab -->
+	<!-- ================== -->
+	<Localized name="com_use_appt2_chk" value="השתמש ב-aapt2"/>
+
+	<!-- General child tab -->
+	<Localized name="options_tab" value="הגדרות"/>
+	<Localized name="apktool_ver_lbl" value="גרסת Apktool:"/>
+	<Localized name="apktool_ver_tip" value="אל תשכח לנקות את ה-Framework לאחר החלפת גרסה"/>
+	<Localized name="comp_lvl_lbl" value="רמת דחיסה:"/>
+	<Localized name="java_heap_lbl" value="נפח Java heap:"/>
+	<Localized name="java_heap_tip" value="הגדל את גודל ה-heap אם אתה מקבל שגיאת חוסר בזיכרון (java.lang.OutOfMemoryError)"/>
+	<Localized name="chk_update_chk" value="בדוק עדכונים"/>
+	<Localized name="rem_win_pos_chk" value="זכור מיקום חלון"/>
+	<Localized name="rem_win_pos_tip" value="זכור את מיקום החלון בעת היציאה. אם החלון מחוץ למסך, מחק את config.xml"/>
+	<Localized name="ena_tips_chk" value="הצג בועות עזרה (ToolTips)"/>
+	<Localized name="ena_tips_tip" value="בטל אם בועות העזרה מפריעות לך"/>
+	<Localized name="dis_dropdown_his_chk" value="בטל היסטוריית רשימת נפתחת"/>
+	<Localized name="clr_his_btn" value="נקה היסטוריה"/>
+	<Localized name="con_menu_lbl" value="שילוב בתפריט ההקשר (Context Menu)"/>
+	<Localized name="ins_lbl" value="התקן"/>
+	<Localized name="unins_lbl" value="הסר"/>
+	<Localized name="task_bar_chk" value="הצג התקדמות בשורת המשימות"/>
+
+	<Localized name="restart_btn" value="אתחול"/>
+	<Localized name="lang_lbl" value="שפה:"/>
+	<Localized name="use_java_por_lbl" value="השתמש ב-Java נייד (Portable)"/>
+	<Localized name="mb_lbl" value="MB"/>
+	<Localized name="set_code_page_chk" value="קבע קוד דף:"/>
+	<Localized name="active_code_page_lbl" value="קוד דף פעיל:"/>
+	<Localized name="dir_lbl" value="תיקייה"/>
+	<Localized name="dec_dir_lbl" value="תיקיית APK מפורק:"/>
+	<Localized name="com_dir_lbl" value="תיקיית APK בנוי:"/>
+	<Localized name="ext_dir_lbl" value="תיקיית APK מחולץ:"/>
+	<Localized name="zip_dir_lbl" value="תיקיית APK דחוס:"/>
+	<Localized name="setup_all_dir_btn" value="הגדרת כל התיקיות"/>
+	<Localized name="other_lbl" value="אחר"/>
+	<Localized name="reset_btn" value="איפוס להגדרות ברירת מחדל"/>
+	<Localized name="temp_folder_btn" value="תיקייה זמנית"/>
+	<Localized name="reset_note_lbl" value="תיקיית העבודה שלך לא תימחק"/>
+
+	<!-- Apktool child tab -->
+	<Localized name="dont_write_info_lbl" value="אל תכתוב מידע לניפוי שגיאות (Debug info)"/>
+	<Localized name="dont_write_info_tip" value="מונע מ-baksmali לכתוב מידע ניפוי (.local, .param, .line וכדומה).[(new-line)][(new-line)]מומלץ להשתמש אם אתה משווה smali מגרסאות שונות של אותו APK.[(new-line)]מספרי השורות ישתנו בין הגרסאות, מה שעלול להקשות על דוחות DIFF."/>
+	<Localized name="dont_dec_res_lbl" value="אל תפרק משאבים (resources.arsc)"/>
+	<Localized name="dont_dec_res_tip" value="מונע את פירוק המשאבים. שומר על resources.arsc שלם.[(new-line)]אם עורכים רק קוד Java (smali), זו הפעולה המומלצת לפירוק ובנייה מהירים יותר."/>
+	<Localized name="dont_dec_dex_lbl" value="אל תפרק קבצי dex (classes.dex)"/>
+	<Localized name="dont_dec_dex_tip" value="מונע את פירוק קבצי ה-dex.[(new-line)]שומר על קבצי ה-apk dex ופשוט מעביר אותם בזמן הבנייה.[(new-line)]אם עורכים רק משאבים, זו הפעולה המומלצת לפירוק ובנייה מהירים יותר."/>
+	<Localized name="dont_copy_unk_asset_lbl" value="מנע פירוק/העתקה של קבצי נכסים (Assets) לא מזוהים."/>
+	<Localized name="keep_file_orig_lbl" value="שמור על קבצים קרובים ככל הניתן למקור"/>
+	<Localized name="keep_file_orig_tip" value="תואם לקבצים המקוריים ככל הניתן, אך מונע בנייה מחדש."/>
+	<Localized name="keep_bro_res_lbl" value="שמור על משאבים שבורים"/>
+	<Localized name="only_dis_main_dex" value="פרק רק את מחלקות ה-dex הראשיות (classes[0-9]*.dex)[(new-line)]בשלוחה הראשית. [v2.4.1+]"/>
+
+	<Localized name="keep_bro_res_tip" value="השתמש אם אירעה שגיאה ומשאבים הושמטו, לדוגמה:[(new-line)]'Invalid config flags detected. Dropping resources',[(new-line)]אך ברצונך לפרק אותם בכל זאת. תצטרך לתקן אותם ידנית לפני הבנייה."/>
+	<Localized name="set_apk_debug_lbl" value="קבע APK כניתן לניפוי (Debuggable)"/>
+	<Localized name="set_apk_debug_tip" value="מוסיף debuggable=''true'' לקובץ ה-AndroidManifest.[(new-line)]ניפוי Smali סומן כמיושן ב-2.0.3 והוסר ב-2.1.[(new-line)]אנא בדוק את SmaliIdea לניפוי שגיאות."/>
+	<Localized name="dis_cru_res_lbl" value="בטל דחיסה (crunching) של קבצי משאבים בזמן הבנייה.[v2.4.0 +]"/>
+	<Localized name="use_aapt2_lbl" value="השתמש ב-aapt2 במקום ב-appt [v2.3.2 +]"/>
+	<Localized name="use_aapt_path" value="השתמש ב-aapt מהנתיב המוגדר:"/>
+	<Localized name="force_manifest_chkbox" value="כפה פירוק Manifest"/>
+	<Localized name="force_manifest_tip" value="פרק את ה-Manifest של ה-APK, גם אם פירוק המשאבים מוגדר כ-'false'."/>
+
+	<!-- Signer child tab -->
+	<Localized name="signer" value="חתימה"/>
+	<Localized name="ins_apk_sign_lbl" value="התקן APK לאחר חתימה"/>
+	<Localized name="over_apk_lbl" value="החלף קובץ APK קיים (בגרירה)"/>
+	<Localized name="use_key_lbl" value="השתמש בקובץ Keystore לחתימה."/>
+	<Localized name="key_pw_lbl" value="סיסמה:"/>
+	<Localized name="rem_key_pw_lbl" value="זכור סיסמה"/>
+	<Localized name="pri_keys_lbl" value="מפתח פרטי ותעודה:"/>
+	<Localized name="pk8_lbl" value="קובץ .pk8:"/>
+	<Localized name="pem_lbl" value="קובץ .pem:"/>
+	<Localized name="sign_apk_after_com_chk" value="חתום על ה-APK לאחר הבנייה"/>
+	<!-- More info about signing https://developer.android.com/studio/command-line/apksigner#options-sign-general -->
+	<Localized name="signing_note" value="כברירת מחדל, apksigner.jar משתמש בערכי min sdk ו-max sdk כדי להחליט מתי להחיל את שיטת החתימה."/>
+	<Localized name="v2_signing_enabled_lbl" value="חתימת v2 פעילה"/>
+	<Localized name="v3_signing_enabled_lbl" value="חתימת v3 פעילה"/>
+	<Localized name="v4_signing_enabled_lbl" value="חתימת v4 פעילה"/>
+	<Localized name="default_str" value="ברירת מחדל"/>
+	<Localized name="false_str" value="כבוי"/>
+	<Localized name="true_str" value="פעיל"/>
+	<Localized name="only_str" value="בלבד"/>
+
+	<!-- Zipalign child tab -->
+	<Localized name="page_align_lbl" value="יישור דפים (Page align) לקבצי אובייקט משותפים"/>
+	<Localized name="verbose_lbl" value="פלט מפורט"/>
+	<Localized name="zip_after_com_lbl" value="יישור (ZipAlign) לאחר הבנייה"/>
+	<Localized name="over_exist_zip_lbl" value="החלף קובץ outfile.zip קיים"/>
+	<Localized name="recom_zopfil_lbl" value="דחיסה מחדש באמצעות Zopfli"/>
+
+	<!-- In code -->
+	<Localized name="sel_dec_dir_diag" value="בחר תיקייה לשמירת ה-APK המפורק"/>
+	<Localized name="sel_com_dir_diag" value="בחר תיקייה לשמירת ה-APK הבנוי"/>
+	<Localized name="sel_ext_dir_diag" value="בחר תיקייה לשמירת ה-APK המחולץ"/>
+	<Localized name="sel_zip_dir_diag" value="בחר תיקייה לשמירת ה-APK הדחוס"/>
+	<Localized name="sel_pk8_file_diag" value="בחר את קובץ ה-pk8"/>
+	<Localized name="sel_pem_file_diag" value="בחר את קובץ ה-pem"/>
+	<Localized name="sel_key_file_diag" value="בחר את קובץ ה-jks או keystore"/>
+	<Localized name="sel_aapt_file_diag" value="בחר את קובץ ה-aapt להרצה"/>
+	<Localized name="sel_all_dir_diag" value="בחר את התיקייה להגדרת כל סביבת העבודה"/>
+	<Localized name="his_clear_mbox" value="ההיסטוריה נוקתה"/>
+	<Localized name="sel_java_diag" value="בחר את קובץ java.exe"/>
+	<Localized name="res_diag" value="האם אתה בטוח שברצונך לאפס להגדרות ברירת המחדל?"/>
+
+	<!-- Tips -->
+	<Localized name="opt_gen_tip" value="טיפ: בהגדרות אלו ניתן לקבוע שפה, ערכת נושא, מיקום חלונות וגרסת Apktool."/>
+	<Localized name="opt_apk_tip" value="טיפ: עריכת משאבים בלבד? סמן 'אל תפרק קבצי dex' לפירוק ובנייה מהירים. עריכת קוד בלבד? סמן 'אל תפרק משאבים'."/>
+	<Localized name="opt_sig_tip" value="טיפ: עבור אפליקציות מערכת (system apps) עדיף לא לחתום — השתמש בחתימה המקורית. לאפליקציות רגילות, חתום עם מפתח פרטי או קובץ Keystore."/>
+	<Localized name="opt_zip_tip" value="טיפ: יישור (ZipAlign) נדרש תמיד לפני העלאה ל-Google Play. מומלץ לסמן 'יישור לאחר הבנייה' כדי שזה יתבצע אוטומטית."/>
+
+	<!-- Application logging -->
+	<Localized name="app_logging_chk" value="רישום לוג יישום (application.log)"/>
+	<Localized name="app_logging_tip" value="שמירת לוג שגיאות וקריסות של התוכנה לקובץ application.log בתיקיית התוכנה"/>
+
+	<!-- Keep original signature -->
+	<Localized name="com_keep_orig_sig_chk" value="שמור חתימה מקורית"/>
+
+	<!-- Popup forms -->
+	<Localized name="copy_lbl" value="העתק"/>
+	<Localized name="apk_info_title" value="מידע על APK"/>
+	<Localized name="save_as_btn" value="שמור בשם..."/>
+	<Localized name="log_output_tab" value="יומן לוג"/>
+	<Localized name="clr_this_log_btn" value="נקה לוג"/>
+	<Localized name="save_log_btn" value="שמור לוג"/>
+
+	<!-- ================== -->
+	<!-- About tab -->
+	<!-- ================== -->
+	<Localized name="about_tab" value="אודות"/>
+	<Localized name="software_lbl" value="גרסאות תוכנה:"/>
+	<Localized name="credits_lbl" value="קרדיטים:"/>
+	<Localized name="softpedia_lbl" value="התוכנה נבדקה ונמצאה נקייה 100% על ידי Softpedia"/>
+	<Localized name="softpedia_link_lbl" value="למידע נוסף ב-Softpedia"/>
+	<Localized name="contact_lbl" value="צור קשר"/>
+	<Localized name="disclaimer_lbl" value="הצהרת אחריות"/>
+	<Localized name="disnote_lbl" value="בדומה ל-apktool, התוכנה APK Easy Tool לא נועדה לצורכי פיראטיות או שימוש לא חוקי.[(new-line)]ניתן להשתמש בה לצורך תרגום, הוספת תכונות, ניתוח אפליקציות ועוד."/>
+
+	<!-- ================== -->
+	<!-- APK Infomation form -->
+	<!-- ================== -->
+	<Localized name="apk_info_title" value="מידע על ה-APK"/>
+	<Localized name="save_as_btn" value="שמור בשם..."/>
+	<Localized name="save_file_filter" value="קובץ טקסט"/>
+
+	<!-- ================== -->
+	<!-- Keystore password form -->
+	<!-- ================== -->
+	<Localized name="keypass_title" value="סיסמת Keystore"/>
+	<Localized name="input_keypass_lbl" value="הזן את סיסמת ה-Keystore:"/>
+
+	<!-- ================== -->
+	<!-- Update form -->
+	<!-- ================== -->
+	<Localized name="update_title" value="עדכון"/>
+	<Localized name="update_lbl" value="גרסה חדשה זמינה:"/>
+	<Localized name="visit_xda_link" value="בקר בפורום XDA"/>
+	<Localized name="changelog_lbl" value="יומן שינויים"/>
+	<Localized name="down_lbl" value="הורדה"/>
+	<Localized name="down_note_lbl" value="הקבצים מאוחסנים בשרת Bitbucket מאובטח"/>
+	<Localized name="ready_stat_lbl" value="מוכן."/>
+	<Localized name="por_ver_btn" value="גרסה ניידת (Portable)"/>
+	<Localized name="close_btn" value="סגור"/>
+
+	<Localized name="down_stat_lbl" value="מוריד גרסת התקנה..."/>
+	<Localized name="down_por_stat_lbl" value="מוריד גרסה ניידת..."/>
+	<Localized name="down_ok_lbl" value="ההורדה הושלמה."/>
+
+	<!-- ================== -->
+	<!-- Other -->
+	<!-- ================== -->
+	<!-- Jump list -->
+	<Localized name="open_dec_apk_dir" value="פתח תיקיית APK מפורק"/>
+	<Localized name="open_com_apk_dir" value="פתח תיקיית APK בנוי"/>
+	<Localized name="open_ext_apk_dir" value="פתח תיקיית APK מחולץ"/>
+	<Localized name="open_zip_apk_dir" value="פתח תיקיית APK דחוס"/>
+	<Localized name="open_baksmali_apk_dir" value="פתח תיקיית baksmali"/>
+	<Localized name="open_smali_apk_dir" value="פתח תיקיית smali"/>
+
+	<!-- CMD execution -->
+	<Localized name="dec_apk_file_notice" value="מבצע פירוק (Decompile) לקובץ APK..."/>
+	<Localized name="dec_jar_file_notice" value="מבצע פירוק (Decompile) לקובץ JAR..."/>
+	<Localized name="dec_success_mbox" value="הפירוק הושלם בהצלחה"/>
+	<Localized name="dec_fail_mbox" value="הפירוק נכשל. אנא עיין ביומן הפלט"/>
+
+	<Localized name="com_apk_file_notice" value="מבצע בנייה (Compile) לקובץ APK..."/>
+	<Localized name="com_jar_file_notice" value="מבצע בנייה (Compile) לקובץ JAR..."/>
+	<Localized name="com_success_mbox" value="הבנייה הושלמה בהצלחה"/>
+	<Localized name="com_fail_mbox" value="הבנייה נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="key_not_sel_mbox" value="קובץ ה-Keystore לא נבחר"/>
+	<Localized name="sign_apk_file_notice" value="חותם על קובץ ה-APK..."/>
+	<Localized name="sign_success_mbox" value="החתימה הושלמה בהצלחה"/>
+	<Localized name="sign_fail_mbox" value="החתימה נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="ins_apk_file_log" value="מתקין APK במכשיר..."/>
+	<Localized name="ins_apk_file_notice" value="מתקין APK במכשיר..."/>
+	<Localized name="ins_success_mbox" value="התקנת ה-APK הושלמה בהצלחה"/>
+	<Localized name="ins_fail_mbox" value="התקנת ה-APK נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="cant_zipalign_mbox" value="לא ניתן לבצע יישור (zipalign) לקובץ. שנה את שם הקובץ או מחק אותו ונסה שוב."/>
+	<Localized name="zipalign_apk_file_notice" value="מבצע יישור (Zipaligning)..."/>
+	<Localized name="zipalign_success_mbox" value="היישור הושלם בהצלחה"/>
+	<Localized name="zipalign_fail_mbox" value="היישור נכשל. אנא עיין ביומן הפלט"/>
+
+	<Localized name="veri_apk_file_log" value="בודק יישור עבור"/>
+	<Localized name="zipalign_output_dis_log" value="פלט מפורט של Zipalign כבוי"/>
+	<Localized name="veri_apk_file_notice" value="בודק יישור..."/>
+	<Localized name="veri_success_mbox" value="הבדיקה הושלמה בהצלחה"/>
+	<Localized name="veri_fail_mbox" value="הבדיקה נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="fw_apk_file_log" value="מתקין Framework..."/>
+	<Localized name="fw_success_mbox" value="התקנת ה-Framework הושלמה בהצלחה"/>
+	<Localized name="fw_fail_mbox" value="התקנת ה-Framework נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="fw_clr_apk_file_log" value="מנקה מטמון Framework..."/>
+	<Localized name="fw_clr_success_mbox" value="מטמון ה-Framework נוקה בהצלחה"/>
+	<Localized name="fw_clr_fail_mbox" value="ניקוי מטמון ה-Framework נכשל"/>
+
+	<Localized name="ext_apk_file_log" value="מחלץ קובץ APK..."/>
+	<Localized name="ext_success_mbox" value="החילוץ הושלם בהצלחה"/>
+	<Localized name="ext_fail_mbox" value="החילוץ נכשל. אנא עיין ביומן הפלט"/>
+
+	<Localized name="zip_apk_file_log" value="דוחס חזרה לקובץ APK..."/>
+	<Localized name="zip_success_mbox" value="הדחיסה הושלמה בהצלחה"/>
+	<Localized name="zip_fail_mbox" value="הדחיסה נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="baksmali_file_log" value="מבצע Baksmaling..."/>
+	<Localized name="baksmali_success_mbox" value="הפעולה הושלמה בהצלחה"/>
+	<Localized name="baksmali_fail_mbox" value="הפעולה נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="smali_file_log" value="מבצע Smaling חזרה לקובץ APK..."/>
+	<Localized name="smali_success_mbox" value="הפעולה הושלמה בהצלחה"/>
+	<Localized name="smali_fail_mbox" value="הפעולה נכשלה. אנא עיין ביומן הפלט"/>
+
+	<Localized name="cancelled_log" value="בוטל"/>
+</Language>

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.labelMain1 = new System.Windows.Forms.Label();
             this.tMain = new System.Windows.Forms.TabControl();
+            this.comCcheckBoxMain = new System.Windows.Forms.CheckBox();
             this.tabMain = new System.Windows.Forms.TabPage();
             this.rebuildApiLvl = new System.Windows.Forms.TextBox();
             this.decodeApiLvl = new System.Windows.Forms.TextBox();
@@ -370,6 +371,12 @@
             this.tabMain.Controls.Add(this.signApkBtn);
             resources.ApplyResources(this.tabMain, "tabMain");
             this.tabMain.Name = "tabMain";
+            // useTagChkBox
+            // 
+            resources.ApplyResources(this.useTagChkBox, "useTagChkBox");
+            this.useTagChkBox.Name = "useTagChkBox";
+            this.useTagChkBox.UseVisualStyleBackColor = true;
+            this.useTagChkBox.CheckedChanged += new System.EventHandler(this.useTagChkBox_CheckedChanged);
             // 
             // rebuildApiLvl
             // 
@@ -412,6 +419,7 @@
             this.chkAliBtn.AllowDrop = true;
             resources.ApplyResources(this.chkAliBtn, "chkAliBtn");
             this.chkAliBtn.Name = "chkAliBtn";
+            this.chkAliBtn.Location = new System.Drawing.Point(325, 230);
             this.toolTip1.SetToolTip(this.chkAliBtn, resources.GetString("chkAliBtn.ToolTip"));
             this.chkAliBtn.UseVisualStyleBackColor = true;
             // 
@@ -629,6 +637,8 @@
             this.zipApkBtn.AllowDrop = true;
             resources.ApplyResources(this.zipApkBtn, "zipApkBtn");
             this.zipApkBtn.Name = "zipApkBtn";
+            this.zipApkBtn.Location = new System.Drawing.Point(115, 230);
+            this.toolTip1.SetToolTip(this.zipApkBtn, resources.GetString("zipApkBtn.ToolTip"));
             this.zipApkBtn.UseVisualStyleBackColor = true;
             // 
             // extractApkBtn
@@ -636,6 +646,8 @@
             this.extractApkBtn.AllowDrop = true;
             resources.ApplyResources(this.extractApkBtn, "extractApkBtn");
             this.extractApkBtn.Name = "extractApkBtn";
+            this.extractApkBtn.Location = new System.Drawing.Point(10, 230);
+            this.toolTip1.SetToolTip(this.extractApkBtn, resources.GetString("extractApkBtn.ToolTip"));
             this.extractApkBtn.UseVisualStyleBackColor = true;
             // 
             // comLbl
@@ -661,6 +673,8 @@
             this.decApkBtn.BackgroundImage = global::APKEasyTool.Properties.Resources.Decompile;
             resources.ApplyResources(this.decApkBtn, "decApkBtn");
             this.decApkBtn.Name = "decApkBtn";
+            this.decApkBtn.Location = new System.Drawing.Point(10, 125);
+            this.toolTip1.SetToolTip(this.decApkBtn, resources.GetString("decApkBtn.ToolTip"));
             this.decApkBtn.UseVisualStyleBackColor = true;
             // 
             // comApkBtn
@@ -668,6 +682,8 @@
             this.comApkBtn.AllowDrop = true;
             resources.ApplyResources(this.comApkBtn, "comApkBtn");
             this.comApkBtn.Name = "comApkBtn";
+            this.comApkBtn.Location = new System.Drawing.Point(115, 125);
+            this.toolTip1.SetToolTip(this.comApkBtn, resources.GetString("comApkBtn.ToolTip"));
             this.comApkBtn.UseVisualStyleBackColor = true;
             // 
             // installApkBtn
@@ -675,6 +691,7 @@
             this.installApkBtn.AllowDrop = true;
             resources.ApplyResources(this.installApkBtn, "installApkBtn");
             this.installApkBtn.Name = "installApkBtn";
+            this.installApkBtn.Location = new System.Drawing.Point(220, 230);
             this.toolTip1.SetToolTip(this.installApkBtn, resources.GetString("installApkBtn.ToolTip"));
             this.installApkBtn.UseVisualStyleBackColor = true;
             // 
@@ -684,6 +701,7 @@
             this.zipAlignBtn.BackgroundImage = global::APKEasyTool.Properties.Resources.Zipalign;
             resources.ApplyResources(this.zipAlignBtn, "zipAlignBtn");
             this.zipAlignBtn.Name = "zipAlignBtn";
+            this.zipAlignBtn.Location = new System.Drawing.Point(325, 125);
             this.toolTip1.SetToolTip(this.zipAlignBtn, resources.GetString("zipAlignBtn.ToolTip"));
             this.zipAlignBtn.UseVisualStyleBackColor = true;
             // 
@@ -711,6 +729,8 @@
             this.signApkBtn.AllowDrop = true;
             resources.ApplyResources(this.signApkBtn, "signApkBtn");
             this.signApkBtn.Name = "signApkBtn";
+            this.signApkBtn.Location = new System.Drawing.Point(220, 125);
+            this.signApkBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.signApkBtn.UseVisualStyleBackColor = true;
             // 
             // tabSmali
@@ -1581,6 +1601,15 @@
             this.toolTip1.SetToolTip(this.comCcheckBox, resources.GetString("comCcheckBox.ToolTip"));
             this.comCcheckBox.UseVisualStyleBackColor = true;
             // 
+            // comCcheckBoxMain
+            // 
+            resources.ApplyResources(this.comCcheckBoxMain, "comCcheckBoxMain");
+            this.comCcheckBoxMain.Name = "comCcheckBoxMain";
+            this.comCcheckBoxMain.Location = new System.Drawing.Point(548, 290);
+            this.comCcheckBoxMain.Size = new System.Drawing.Size(210, 17);
+            this.toolTip1.SetToolTip(this.comCcheckBoxMain, resources.GetString("comCcheckBox.ToolTip"));
+            this.comCcheckBoxMain.UseVisualStyleBackColor = true;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DarkGray;
@@ -1969,6 +1998,8 @@
             // 
             // label26
             // 
+            // label26
+            // 
             resources.ApplyResources(this.label26, "label26");
             this.label26.Name = "label26";
             // 
@@ -2109,7 +2140,7 @@
             // 
             this.logoPanel.BackColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.logoPanel, "logoPanel");
-            this.logoPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.logoPanel.Name = "logoPanel";
             // 
             // pictureBox1
@@ -2177,6 +2208,7 @@
             this.LocationChanged += new System.EventHandler(this.AMF_LocationChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ApkMainForm_KeyDown);
             this.tMain.ResumeLayout(false);
+            this.tabMain.Controls.Add(this.comCcheckBoxMain);
             this.tabMain.ResumeLayout(false);
             this.tabMain.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -2415,6 +2447,7 @@
         internal System.Windows.Forms.Panel panel6;
         internal System.Windows.Forms.CheckBox comFcheckBox;
         internal System.Windows.Forms.CheckBox comCcheckBox;
+        internal System.Windows.Forms.CheckBox comCcheckBoxMain;
         internal System.Windows.Forms.CheckBox decFcheckBox;
         private System.Windows.Forms.LinkLabel linkLabelXda;
         private System.Windows.Forms.Label label15;

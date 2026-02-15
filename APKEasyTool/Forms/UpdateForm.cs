@@ -27,6 +27,7 @@ namespace APKEasyTool
         public UpdateForm()
         {
             InitializeComponent();
+            Lang.ApplyRTL(this);
 
             Text = Lang.Localize("update_title", Text);
             yourVerLbl.Text = Lang.Localize("update_lbl", yourVerLbl.Text);

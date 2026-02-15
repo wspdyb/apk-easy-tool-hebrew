@@ -1,4 +1,4 @@
-﻿using APKEasyTool.Forms;
+using APKEasyTool.Forms;
 using APKEasyTool.Utils;
 using System;
 using System.ComponentModel;
@@ -59,6 +59,7 @@ namespace APKEasyTool
                 main.tMain.ItemSize = new System.Drawing.Size((main.tMain.Width - 20) / main.tMain.TabCount, 85);
                 main.oTab.ItemSize = new System.Drawing.Size((main.oTab.Width - 30) / main.oTab.TabCount, 85);
             }
+            // RTL tab sizes are handled automatically - no extra width needed
 
             // ----- Auto set combobox ----- //
             main.v2signComboBox.SelectedIndex = 0;
@@ -103,7 +104,7 @@ namespace APKEasyTool
                     main.LogOutput(CMD.ProcessStartWithOutput("java.exe", "-version"));
             }
 
-            Variables.ApkToolVer = CMD.ProcessStartWithOutput("cmd.exe", "/c \"java -jar " + Variables.Apktool + " -version \"");
+            Variables.ApkToolVer = CMD.ProcessStartWithOutput("cmd.exe", "/c \"java -Dfile.encoding=UTF-8 -jar " + Variables.Apktool + " -version \"");
 
             main.isLoaded = true;
 
@@ -131,6 +132,14 @@ namespace APKEasyTool
             //            main.LogOutput(Lang.NO_UPDATE, MainForm.Type.Info);
             //    }
             //});
+
+            main.pakLbl.Tag = "path";
+            main.launchLbl.Tag = "path";
+            main.verLbl.Tag = "path";
+            main.vercLbl.Tag = "path";
+            main.minLbl.Tag = "path";
+            main.tarLbl.Tag = "path";
+            main.sigVer.Tag = "path";
 
             InitCmdArgs();
         }

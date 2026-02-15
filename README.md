@@ -1,32 +1,28 @@
-# APKEasyTool
-**Source Code Mirror for APKEasyTool by evildog1 from XDA**
+﻿# APK Easy Tool - Hebrew Support & Modern Fixes 🛠️
 
-Use Visual Studio 2019 or above to use these projects. Projects are based on C#
+This is a refined fork of the original [APK Easy Tool](https://github.com/evildog1/APK-Easy-Tool).
+The goal of this version is to fix critical bugs related to **Hebrew/RTL paths** and update the core engine for **Android 14/15** support.
 
-You can continue to develop APK Easy Tool under the same name, just make sure you give credit to **original author (Evildog1)**
+## 🚀 Key Features
 
-# His [last Message](https://forum.xda-developers.com/t/discontinued-windows-apk-easy-tool-v1-60-2022-06-23.3333960/post-87061109) to the Project
+* **Full Hebrew Path Support:** Fixed crashes when compiling/decompiling folders with Hebrew characters.
+* **Smart Rename System:** Automatically handles non-English paths during build process to prevent apt errors.
+* **UTF-8 Log Fix:** Console output now displays Hebrew/Unicode characters correctly.
+* **Updated Engine:** Core updated to **Apktool 2.10.0**.
+* **Clean & Fast:** Optimized for modern Windows environments.
 
-After 6 years, it has to be sadly announced that the project has been discontinued due to the changes my personal life, and lost the movitation to continue this project. I don't have the opportunity to get back to working on this anymore
+## 📦 How to Use
 
-Due to what happens with Android (Split APK/Android App Bundle, APK protections, Play Protect, system restrictions...) I decided to finish my Android journey right here. It was a nice experience, but not anymore.
+1. Download the latest release.
+2. Run APKEasyTool.exe.
+3. Drag & Drop your APK.
+4. Select "Decompile" or "Compile".
 
-The source code and assets are provided under download links. The project is based on C#, use Visual Studio 2019 or above to use it. Please feel free to continue developing with it, wish you good luck
+##  créditos (Credits)
 
-Bitbucket server will be shut down at the end of 2022 (Jan 1 2023 00:00), users who use older version will no longer recieve update notification. Bitbucket became horrible service anyways, so there is no point keeping it up anymore
+* Original Author: **evildog1**
+* Hebrew Fixes & Maintenance: **[Your Name/Community]**
 
-If you are looking for alternatives, here are the links below:
+## 📜 License
 
-- APKToolGUI: https://github.com/INF1NUM/APKToolGUI 
-- APKToolGUI (New): https://github.com/AndnixSH/APKToolGUI
-- ApktoolFX: https://github.com/oscar0812/ApktoolFX
-- Apk Studio: https://github.com/vaibhavpandeyvpz/apkstudio
-- APKLab: https://github.com/APKLab/APKLab
-- Tickle My Android: https://forum.xda-developers.com/t/tool-tickle-my-android-decompile-recompile-with-ease.1633333/
-- INZ APKTool 2.4.0 (Beta): https://forum.xda-developers.com/t/inz-apktool-2-4-0-beta.4446939/
-- INZ APKTool: https://forum.xda-developers.com/t/inz-apktool-2-0-windows-gui-apk-tool.4000167/
-- APK Tools: https://github.com/kermage/APK-Tools
-- APK Multi Tool: https://forum.xda-developers.com/t/windows-utility-tool-apk-multi-tool.1310151/
-- APK Editor Studio: https://github.com/kefir500/apk-editor-studio
-
-Thank you for your kind understanding and the support
+Project follows the original open-source license.

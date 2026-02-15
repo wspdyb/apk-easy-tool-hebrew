@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Xml;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace APKEasyTool
 {
@@ -173,11 +175,17 @@ namespace APKEasyTool
         public Lang(MainForm Main)
         {
             main = Main;
+            if (rtlEnabled)
+            {
+                main.RightToLeft = RightToLeft.Yes;
+                main.RightToLeftLayout = true;
+            }
         }
 
         public static Dictionary<string, Dictionary<string, string>> _localizations = new Dictionary<string, Dictionary<string, string>>();
 
         public static string _currentLocalization = "APK Easy Tool";
+        public static bool rtlEnabled = false;
 
         public static string Localize(string key)
         {
@@ -225,6 +233,29 @@ namespace APKEasyTool
 
                 XmlDocument xmldoc = new XmlDocument();
                 xmldoc.Load(pFile);
+
+                XmlNode langNode = xmldoc.SelectSingleNode("Language");
+                if (langNode != null && langNode.Attributes["rtl"] != null && langNode.Attributes["rtl"].Value.ToLower() == "true")
+                {
+                    rtlEnabled = true;
+                    if (main != null)
+                    {
+                        main.RightToLeft = RightToLeft.Yes;
+                        main.RightToLeftLayout = true;
+                        ApplyRTL(main);
+                    }
+                }
+                else
+                {
+                    rtlEnabled = false;
+                    if (main != null)
+                    {
+                        main.RightToLeft = RightToLeft.No;
+                        main.RightToLeftLayout = false;
+                        ApplyRTL(main);
+                    }
+                }
+
                 XmlNodeList nodeList = xmldoc.SelectNodes("Language/Localized");
 
                 _localizations.Add("APK Easy Tool", new Dictionary<string, string>());
@@ -465,6 +496,8 @@ namespace APKEasyTool
                 main.toolTip1.SetToolTip(main.comFcheckBox, Localize("com_skip_changes_tip", main.toolTip1.GetToolTip(main.comFcheckBox)));
                 main.comCcheckBox.Text = Localize("com_keep_orig_sig_chk", main.comCcheckBox.Text);
                 main.toolTip1.SetToolTip(main.comCcheckBox, Localize("com_keep_orig_sig_tip", main.toolTip1.GetToolTip(main.comCcheckBox)));
+                main.comCcheckBoxMain.Text = Localize("com_keep_orig_sig_chk", main.comCcheckBoxMain.Text);
+                main.toolTip1.SetToolTip(main.comCcheckBoxMain, Localize("com_keep_orig_sig_tip", main.toolTip1.GetToolTip(main.comCcheckBoxMain)));
                 main.chkBoxUseAapt2.Text = Localize("com_use_appt2_chk", main.chkBoxUseAapt2.Text);
                 main.toolTip1.SetToolTip(main.chkBoxUseAapt2, Localize("com_use_appt2_tip", main.toolTip1.GetToolTip(main.chkBoxUseAapt2)));
                 main.signApkCheckBox.Text = Localize("sign_apk_after_com_chk", main.signApkCheckBox.Text);
@@ -560,6 +593,7 @@ namespace APKEasyTool
                 main.useJaxaXmxChkBox.Text = Localize("java_heap_lbl", main.useJaxaXmxChkBox.Text);
                 main.toolTip1.SetToolTip(main.javaHeapSizeNum, Localize("java_heap_tip", main.toolTip1.GetToolTip(main.javaHeapSizeNum)));
 
+
                 //Directory
                 main.label78.Text = Localize("dir_lbl", main.label78.Text);
                 main.label1.Text = Localize("dec_dir_lbl", main.label1.Text);
@@ -572,10 +606,22 @@ namespace APKEasyTool
                 main.changeExtDir.Text = Localize("change_btn", main.changeExtDir.Text);
                 main.changeZipDir.Text = Localize("change_btn", main.changeZipDir.Text);
 
+                // RTL fix: swap path textbox and button positions 
+                // so button is on the RIGHT and textbox is on the LEFT
+                if (rtlEnabled)
+                {
+                    SwapPathButtonTextBox(main.pathOfDec, main.changeDecDir);
+                    SwapPathButtonTextBox(main.pathOfCom, main.changeComDir);
+                    SwapPathButtonTextBox(main.pathOfExt, main.changeExtDir);
+                    SwapPathButtonTextBox(main.pathOfZip, main.changeZipDir);
+                }
+
                 //Other
                 main.label37.Text = Localize("other_lbl", main.label37.Text);
                 main.resBtn.Text = Localize("reset_btn", main.resBtn.Text);
                 main.label103.Text = Localize("reset_note_lbl", main.label103.Text);
+
+                // AddTip(main.oTab.TabPages[0], "opt_gen_tip");
             }
 
             //Options 2 tab
@@ -612,6 +658,13 @@ namespace APKEasyTool
                 main.chkBoxUseAapt2.Text = Localize("use_aapt2_lbl", main.chkBoxUseAapt2.Text);
                 main.useAaptPathChkBox.Text = Localize("use_aapt_path", main.useAaptPathChkBox.Text);
                 main.setAaptPathBtn.Text = Localize("change_btn", main.setAaptPathBtn.Text);
+
+                if (rtlEnabled)
+                {
+                    SwapPathButtonTextBox(main.useAaptPathTxtBox, main.setAaptPathBtn);
+                }
+
+                AddTip(main.oTab.TabPages[1], "opt_apk_tip");
             }
 
             //Options 3 tab
@@ -662,6 +715,8 @@ namespace APKEasyTool
                 main.v2SignLbl.Text = Localize("v2_signing_enabled_lbl", main.v2SignLbl.Text);
                 main.v3SignLbl.Text = Localize("v3_signing_enabled_lbl", main.v3SignLbl.Text);
                 main.v4SignLbl.Text = Localize("v4_signing_enabled_lbl", main.v4SignLbl.Text);
+
+                AddTip(main.oTab.TabPages[2], "opt_sig_tip");
             }
 
             //Options 4 tab
@@ -672,6 +727,8 @@ namespace APKEasyTool
                 main.zipAfterSignChkBox.Text = Localize("zip_after_com_lbl", main.zipAfterSignChkBox.Text);
                 main.zipFcheckBox.Text = Localize("over_exist_zip_lbl", main.zipFcheckBox.Text);
                 main.zipZcheckBox.Text = Localize("recom_zopfil_lbl", main.zipZcheckBox.Text);
+
+                AddTip(main.oTab.TabPages[3], "opt_zip_tip");
             }
 
             //About
@@ -688,6 +745,207 @@ namespace APKEasyTool
                 main.label18.Text = Localize("translated_by_lbl", main.label18.Text);
                 main.label28.Text = Localize("translation_credit_lbl", main.label28.Text);
             }
+        }
+        public static void ApplyRTL(Control control)
+        {
+            if (control == null) return;
+
+            if (rtlEnabled)
+            {
+                // If already mirrored, skip to avoid double-flipping
+                if (control.Tag != null && control.Tag.ToString() == "mirrored") return;
+
+                if (control is TextBox || control is RichTextBox)
+                {
+                    // File paths and logs should stay LTR
+                    control.RightToLeft = RightToLeft.No;
+                }
+                else if (control is ComboBox)
+                {
+                    // ComboBox dropdowns should be RTL-aligned
+                    control.RightToLeft = RightToLeft.Yes;
+                }
+                else
+                {
+                    control.RightToLeft = RightToLeft.Yes;
+                }
+
+                if (control is Form form)
+                {
+                    form.RightToLeftLayout = true;
+                }
+
+                if (control is CheckBox cb)
+                {
+                    // In RTL mode, MiddleLeft visually means Right
+                    cb.CheckAlign = ContentAlignment.MiddleLeft;
+                    cb.TextAlign = ContentAlignment.MiddleLeft;
+                }
+                else if (control is RadioButton rb)
+                {
+                    rb.CheckAlign = ContentAlignment.MiddleLeft;
+                    rb.TextAlign = ContentAlignment.MiddleLeft;
+                }
+                else if (control is Button btn)
+                {
+                    // For big buttons with icons, we should keep BottomCenter
+                    if (btn.TextAlign != ContentAlignment.BottomCenter)
+                        btn.TextAlign = ContentAlignment.MiddleCenter;
+                }
+                else if (control is Label lbl)
+                {
+                    // In RTL mode, MiddleRight visually means Left, MiddleLeft visually means Right
+                    if (lbl.Tag != null && lbl.Tag.ToString() == "path")
+                        lbl.TextAlign = ContentAlignment.MiddleRight;
+                    else if (lbl.Name == "label95")
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;  // Center the main tip
+                    else
+                        lbl.TextAlign = ContentAlignment.MiddleLeft;
+                }
+                else if (control is TabControl tc)
+                {
+                    tc.RightToLeftLayout = true;
+                }
+
+                // Manual mirroring for containers that don't support RightToLeftLayout
+                // We use a safer approach and check if already mirrored
+                if (control is Panel || control is TabPage || control is GroupBox || control is UserControl)
+                {
+                    if (control.Tag == null || control.Tag.ToString() != "mirrored")
+                    {
+                        foreach (Control child in control.Controls)
+                        {
+                            child.Left = control.Width - child.Width - child.Left;
+
+                            // Special fix for info panel (panel2) to ensure labels and values are correctly aligned
+                            if (control.Name == "panel2")
+                            {
+                                int iconRightPadding = 10;
+                                int iconWidth = 48; // Approx width of apkicon
+
+                                if (child.Name == "apkicon")
+                                {
+                                    child.Left = control.Width - child.Width - iconRightPadding;
+                                }
+                                else if (child is Label lbl)
+                                {
+                                    lbl.TextAlign = ContentAlignment.MiddleRight;
+                                    // If it's a value label (e.g., pakLbl, verLbl), it should be further left
+                                    // We detect them by their Name suffix or position
+                                    if (lbl.Name.EndsWith("Lbl") && lbl.Name != "label54" && lbl.Name != "launchLbl" && lbl.Name != "sigVer")
+                                    {
+                                        // Values usually are to the left of labels
+                                        // Automatic mirroring at line 816 should be enough if the designer is clean.
+                                        // We just ensure no overlap with big icon.
+                                        if (child.Right > control.Width - iconWidth - 20)
+                                            child.Left -= (iconWidth + 20);
+                                    }
+                                }
+                                else if (child is PictureBox && child.Name != "apkicon")
+                                {
+                                    // Reposition ADB/Playstore icons to the visual LEFT
+                                    if (child.Left < 100)
+                                        child.Left = 10;
+                                }
+                                else if (child is Button && child.Name != "fullApkInfoBtn")
+                                {
+                                     child.Left = control.Width - child.Width - iconRightPadding;
+                                }
+                            }
+
+                            // Mirror the anchors too
+                            if (child.Anchor != AnchorStyles.None)
+                            {
+                                AnchorStyles newAnchor = child.Anchor;
+                                bool hasLeft = (child.Anchor & AnchorStyles.Left) == AnchorStyles.Left;
+                                bool hasRight = (child.Anchor & AnchorStyles.Right) == AnchorStyles.Right;
+
+                                if (hasLeft && !hasRight)
+                                {
+                                    newAnchor = (newAnchor & ~AnchorStyles.Left) | AnchorStyles.Right;
+                                }
+                                else if (hasRight && !hasLeft)
+                                {
+                                    newAnchor = (newAnchor & ~AnchorStyles.Right) | AnchorStyles.Left;
+                                }
+                                child.Anchor = newAnchor;
+                            }
+                        }
+                        control.Tag = "mirrored";
+                    }
+                }
+            }
+            else
+            {
+                // Resetting to LTR is harder and usually just requires app restart 
+                // but let's at least set RightToLeft back.
+                control.RightToLeft = RightToLeft.No;
+                if (control is Form form)
+                {
+                    form.RightToLeftLayout = false;
+                }
+                control.Tag = null;
+            }
+
+            foreach (Control child in control.Controls)
+            {
+                ApplyRTL(child);
+            }
+        }
+
+        /// <summary>
+        /// Swaps the X positions of a textbox and a button so the button is on the right
+        /// and the textbox is on the left in RTL mode. The mirroring would
+        /// normally put the button on the left, which looks wrong for path fields.
+        /// </summary>
+        private static void SwapPathButtonTextBox(Control textBox, Control button)
+        {
+            int txtLeft = textBox.Left;
+            int btnLeft = button.Left;
+
+            // Make sure button is to the right of textbox
+            if (btnLeft < txtLeft)
+            {
+                // Swap: put textbox where button is and button where textbox ends
+                textBox.Left = btnLeft;
+                button.Left = btnLeft + textBox.Width + 5;
+            }
+        }
+
+        private static void AddTip(TabPage page, string tipKey)
+        {
+            if (!rtlEnabled) return;
+
+            string tipText = Localize(tipKey, "");
+            if (string.IsNullOrEmpty(tipText)) return;
+
+            // Remove existing tip label if any
+            foreach (Control c in page.Controls)
+            {
+                if (c.Name == "dynamicTipLabel_" + tipKey)
+                {
+                    page.Controls.Remove(c);
+                    c.Dispose();
+                    break;
+                }
+            }
+
+            Label tipLabel = new Label();
+            tipLabel.Name = "dynamicTipLabel_" + tipKey;
+            tipLabel.Text = tipText;
+            tipLabel.AutoSize = false;
+            tipLabel.Width = page.ClientSize.Width - 20;
+            tipLabel.Height = 30;
+            // Place inside the visible area, not extending the page
+            int yPos = page.ClientSize.Height - 35;
+            tipLabel.Location = new Point(10, yPos);
+            tipLabel.ForeColor = Color.RoyalBlue;
+            tipLabel.Font = new Font(tipLabel.Font, FontStyle.Italic);
+            tipLabel.TextAlign = ContentAlignment.MiddleCenter;
+            tipLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+            page.Controls.Add(tipLabel);
+            tipLabel.BringToFront();
         }
     }
 }

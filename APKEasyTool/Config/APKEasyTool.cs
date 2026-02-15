@@ -159,5 +159,6 @@
         public string TextBoxAapt { get; set; }
 
         public bool CheckBoxForceManifest { get; set; }
+
     }
 }

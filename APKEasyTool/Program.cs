@@ -43,6 +43,8 @@ namespace APKEasyTool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
+
             //LoadLang
             LoadConfig();
             Lang.LoadStr();

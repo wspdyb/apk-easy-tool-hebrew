@@ -1,4 +1,4 @@
-﻿using APKEasyTool.Utils;
+using APKEasyTool.Utils;
 using Microsoft.Win32;
 using System;
 using System.Diagnostics;
@@ -111,7 +111,7 @@ namespace APKEasyTool
         {
             try
             {
-                Variables.ApkToolVer = CMD.ProcessStartWithOutput("cmd.exe", "/c \"java -jar " + Variables.Apktool + " -version \"");
+                Variables.ApkToolVer = CMD.ProcessStartWithOutput("cmd.exe", "/c \"java -Dfile.encoding=UTF-8 -jar " + Variables.Apktool + " -version \"");
 
                 main.Invoke(new Action(delegate ()
                 {

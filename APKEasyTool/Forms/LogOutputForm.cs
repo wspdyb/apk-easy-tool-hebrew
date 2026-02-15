@@ -19,6 +19,7 @@ namespace APKEasyTool.Forms
         public LogOutputForm(MainForm Main)
         {
             InitializeComponent();
+            Lang.ApplyRTL(this);
 
             Text = Lang.Localize("log_output_tab", Text);
             clearLogBtn.Text = Lang.Localize("clr_this_log_btn", clearLogBtn.Text);

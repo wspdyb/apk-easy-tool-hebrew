@@ -39,6 +39,7 @@ namespace APKEasyTool
                         main.decFcheckBox.Enabled = true;
                         main.comFcheckBox.Enabled = true;
                         main.comCcheckBox.Enabled = true;
+                        main.comCcheckBoxMain.Enabled = true;
                         main.installApkBtn.Enabled = true;
                         main.zipAlignBtn.Enabled = true;
                         main.signApkBtn.Enabled = true;
@@ -62,6 +63,7 @@ namespace APKEasyTool
                         main.decFcheckBox.Enabled = true;
                         main.comFcheckBox.Enabled = true;
                         main.comCcheckBox.Enabled = true;
+                        main.comCcheckBoxMain.Enabled = true;
                         main.installApkBtn.Enabled = true;
                         main.zipAlignBtn.Enabled = true;
                         main.signApkBtn.Enabled = true;
@@ -83,6 +85,7 @@ namespace APKEasyTool
                         main.decFcheckBox.Enabled = true;
                         main.comFcheckBox.Enabled = true;
                         main.comCcheckBox.Enabled = false;
+                        main.comCcheckBoxMain.Enabled = false;
                         main.installApkBtn.Enabled = false;
                         main.zipAlignBtn.Enabled = false;
                         main.signApkBtn.Enabled = false;
@@ -106,6 +109,7 @@ namespace APKEasyTool
                         main.decFcheckBox.Enabled = true;
                         main.comFcheckBox.Enabled = true;
                         main.comCcheckBox.Enabled = true;
+                        main.comCcheckBoxMain.Enabled = true;
                         main.installApkBtn.Enabled = false;
                         main.zipAlignBtn.Enabled = false;
                         main.signApkBtn.Enabled = false;
@@ -116,10 +120,33 @@ namespace APKEasyTool
             }
         }
 
-        public async void Readapk(string path)
+                public async void Readapk(string path)
         {
             await Task.Factory.StartNew(() =>
             {
+                // --- SMART FIX: HEBREW INPUT SUPPORT ---
+                string originalPath = path;
+                string tempApkPath = Path.Combine(Path.GetTempPath(), "AET_Info_" + Guid.NewGuid().ToString().Substring(0, 6) + ".apk");
+                bool isTempCopy = false;
+
+                // בדיקה אם יש עברית בנתיב
+                bool containsHebrew = System.Text.RegularExpressions.Regex.IsMatch(path, @"[\u0590-\u05FF]");
+
+                try
+                {
+                    if (containsHebrew && File.Exists(path))
+                    {
+                        File.Copy(path, tempApkPath, true);
+                        path = tempApkPath; // עובדים על העותק הזמני
+                        isTempCopy = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Temp copy failed: " + ex.Message);
+                }
+                // ---------------------------------------
+
                 string SignVer = "v1", PackageName = "";
 
                 //main.LogOutput(Lang.READ_APK, MainForm.Type.Info);
@@ -162,12 +189,10 @@ namespace APKEasyTool
                             icon = icon.Replace(".xml", ".png");
                         }
 
+                        // התיקון הקריטי: שימוש ב-PackageName האמיתי ל-Cache, אבל חילוץ מהקובץ הזמני (path)
                         string geticonfile = Variables.TempPathCache + PackageName + "\\" + icon;
-
-                        Debug.WriteLine("[i] icon: " + geticonfile);
                         string getcachedir = Path.GetDirectoryName(geticonfile);
-                        Debug.WriteLine(getcachedir);
-                        // apk.apk/res/drawable-hdpi-v4/ic_launcher_android.png/
+                        
                         if (icon.Contains("anydpi-v26"))
                         {
                             foreach (string Png in png)
@@ -181,6 +206,8 @@ namespace APKEasyTool
                             CMD.ProcessStartWithOutput(Variables.RealPath("Resources\\7z.exe"), "e \"" + path + "\" \"" + icon + "\" -o\"" + getcachedir + "\" -aoa");
                         }
                         CMD.ProcessStartWithOutput(Variables.RealPath("Resources\\7z.exe"), "e \"" + path + "\" \"META-INF\" -o\"" + Variables.TempPathCache + PackageName + "\\META-INF\" -aoa");
+                        
+                        // בדיקת חתימות (המשך קוד מקורי)
                         string[] files = Directory.GetFiles(Variables.TempPathCache + PackageName + "\\META-INF", "*.SF");
                         if (!Directory.Exists(Variables.TempPathCache + PackageName + "\\META-INF"))
                         {
@@ -191,33 +218,14 @@ namespace APKEasyTool
                             string[] sig = File.ReadAllLines(files[0]);
                             foreach (string s in sig)
                             {
-                                if (s.Contains("X-Android-APK-Signed: 2, 3"))
-                                {
-                                    SignVer = "v2, v3";
-                                    break;
-                                }
-                                else if (s.Contains("X-Android-APK-Signed: 2"))
-                                {
-                                    SignVer = "v2";
-                                    break;
-                                }
+                                if (s.Contains("X-Android-APK-Signed: 2, 3")) { SignVer = "v2, v3"; break; }
+                                else if (s.Contains("X-Android-APK-Signed: 2")) { SignVer = "v2"; break; }
                             }
-                            //Regex regSign = new Regex(@"(?<=X-Android-APK-Signed: )\S*(?:\s\S+)?", RegexOptions.None);
-                            //Match mat = myRegex.Match(sig);
                         }
                         main.Invoke(new Action(delegate ()
                         {
-                            try
-                            {
-                                //Debug.WriteLine("[i] icon 2: " + geticonfile);
-                                Debug.WriteLine("load icon: " + geticonfile);
-                                main.apkicon.Image = Image.FromFile(geticonfile);
-                            }
-                            catch (Exception ex)
-                            {
-                                Debug.WriteLine(ex.ToString());
-                                main.apkicon.Image = Properties.Resources.noicon;
-                            }
+                            try { main.apkicon.Image = Image.FromFile(geticonfile); }
+                            catch { main.apkicon.Image = Properties.Resources.noicon; }
                             main.sigVer.Text = SignVer;
                             main.fullApkInfoBtn.Enabled = true;
                         }));
@@ -232,17 +240,14 @@ namespace APKEasyTool
                             main.sigVer.Text = "--";
                         }));
                     }
-                    //main.LogOutput(Lang.DONE, MainForm.Type.Info, null);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     main.LogOutput(Lang.ERROR_READ_APK, MainForm.Type.Error);
-                    Debug.WriteLine(ex.ToString());
                     main.Invoke(new Action(delegate ()
                     {
                         main.apkicon.Image = null;
                         main.pakLbl.Text = "---";
-                        main.launchLbl.Text = "---";
                         main.vercLbl.Text = "---";
                         main.verLbl.Text = "---";
                         main.minLbl.Text = "---";
@@ -250,10 +255,16 @@ namespace APKEasyTool
                         main.sigVer.Text = "---";
                     }));
                 }
+                finally
+                {
+                    // מחיקת הקובץ הזמני
+                    if (isTempCopy && File.Exists(tempApkPath))
+                    {
+                        try { File.Delete(tempApkPath); } catch { }
+                    }
+                }
             });
-        }
-
-        internal async void Readymlxml(string path)
+        }internal async void Readymlxml(string path)
         {
             await Task.Factory.StartNew(() =>
             {

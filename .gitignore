@@ -1,0 +1,11 @@
+﻿[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.log
+Temp_*
+AET_*
+*.tmp
+Resources/Apktool/apktool_*.jar
+!Resources/Apktool/apktool_2.10.0.jar
